@@ -1,0 +1,17 @@
+.layout-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+
+  &__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  &__columns {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+  }
+}
