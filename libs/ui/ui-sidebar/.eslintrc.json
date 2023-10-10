@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "portifolio",
+            "prefix": "ui",
             "style": "kebab-case"
           }
         ]

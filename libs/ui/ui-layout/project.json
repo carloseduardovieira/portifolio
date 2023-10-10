@@ -2,7 +2,7 @@
   "name": "ui-layout",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ui/ui-layout/src",
-  "prefix": "portifolio",
+  "prefix": "ui",
   "tags": [],
   "projectType": "library",
   "targets": {

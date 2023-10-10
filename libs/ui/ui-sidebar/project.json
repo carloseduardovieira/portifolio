@@ -2,7 +2,7 @@
   "name": "ui-sidebar",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ui/ui-sidebar/src",
-  "prefix": "portifolio",
+  "prefix": "ui",
   "tags": [],
   "projectType": "library",
   "targets": {
