@@ -19,7 +19,10 @@
           "apps/portifolio/src/favicon.ico",
           "apps/portifolio/src/assets"
         ],
-        "styles": ["apps/portifolio/src/styles.scss"],
+        "styles": [
+          "apps/portifolio/src/styles.scss",
+          "node_modules/@nebular/theme/styles/prebuilt/default.css"
+        ],
         "scripts": []
       },
       "configurations": {
