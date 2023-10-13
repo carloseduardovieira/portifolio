@@ -14,10 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "@portifolio/ui-layout": ["libs/ui/ui-layout/src/index.ts"],
-      "@portifolio/ui-sidebar": ["libs/ui/ui-sidebar/src/index.ts"]
-    }
+    "paths": {}
   },
   "exclude": ["node_modules", "tmp"]
 }
