@@ -8,11 +8,18 @@ import {
   NbInputModule,
   NbStatusService,
 } from '@nebular/theme';
+import { HttpClientModule } from '@angular/common/http';
 
 const components = [SearchInputComponent];
 
 @NgModule({
-  imports: [CommonModule, TranslateModule, NbInputModule, NbCardModule],
+  imports: [
+    CommonModule,
+    TranslateModule,
+    NbInputModule,
+    NbCardModule,
+    HttpClientModule,
+  ],
   declarations: [...components],
   exports: components,
   providers: [NbFocusMonitor, NbStatusService],

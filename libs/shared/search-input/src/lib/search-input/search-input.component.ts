@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Inject,
+  OnInit,
+} from '@angular/core';
 import {
   Subject,
   debounceTime,
@@ -8,6 +13,8 @@ import {
   switchMap,
 } from 'rxjs';
 
+import { SearchInputManagementInterface } from './interfaces/search-input.management.interface';
+
 @Component({
   selector: 'shared-search-input',
   templateUrl: './search-input.component.html',
@@ -16,6 +23,11 @@ import {
 })
 export class SearchInputComponent implements OnInit {
   private filterString: Subject<string> = new Subject<string>();
+
+  constructor(
+    @Inject('SearchInputManagementInterface')
+    private management: SearchInputManagementInterface<unknown>
+  ) {}
 
   ngOnInit(): void {
     this.watchTextInputChanges();
@@ -33,12 +45,12 @@ export class SearchInputComponent implements OnInit {
         distinctUntilChanged(),
         switchMap((term) => {
           if (term && term.length > 3) {
-            return of([]);
+            return of('');
           }
 
           return of(term);
         })
       )
-      .subscribe();
+      .subscribe((term: string) => this.management.searchQueryChanged(term));
   }
 }

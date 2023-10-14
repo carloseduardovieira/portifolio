@@ -1,1 +1,1 @@
-export * from './lib/search-input.module';
+export * from './lib';

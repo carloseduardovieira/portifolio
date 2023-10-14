@@ -1,3 +1,4 @@
+import { UsersService } from './shared/services/users.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -41,5 +42,6 @@ export function createTranslateLoader(http: HttpClient) {
     NbEvaIconsModule,
   ],
   declarations: [GithubSearchComponent, UserListComponent],
+  providers: [UsersService],
 })
 export class GithubSearchModule {}
