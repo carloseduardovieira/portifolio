@@ -1,3 +1,8 @@
 {
-  "HOME": "home 2"
+  "SEARCH": {
+    "PLACEHOLDER": "Search repository"
+  },
+  "USER-LIST": {
+    "NO_CONTENT": ""
+  }
 }

@@ -4,20 +4,13 @@ import { RouterModule } from '@angular/router';
 import {
   NbSidebarModule,
   NbLayoutModule,
-  NbButtonModule,
   NbSidebarService,
 } from '@nebular/theme';
 import { UiTemplateModule } from '@portifolio/ui-template';
 
 @Component({
   standalone: true,
-  imports: [
-    RouterModule,
-    UiTemplateModule,
-    NbLayoutModule,
-    NbSidebarModule,
-    NbButtonModule,
-  ],
+  imports: [RouterModule, UiTemplateModule, NbLayoutModule, NbSidebarModule],
   providers: [NbSidebarService],
   selector: 'portifolio-root',
   templateUrl: './app.component.html',

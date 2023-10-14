@@ -1,1 +1,15 @@
-<p>search-input works! {{ 'HOME' | translate }}</p>
+<div class="search-input">
+  <nb-card>
+    <nb-card-body>
+      <input
+        type="text"
+        nbInput
+        fullWidth
+        status="basic"
+        [placeholder]="'SEARCH.PLACEHOLDER' | translate"
+        autocomplete="off"
+        (keyup)="eventHandler($any($event))"
+      />
+    </nb-card-body>
+  </nb-card>
+</div>

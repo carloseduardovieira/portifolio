@@ -9,6 +9,10 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+import { UserListComponent } from './github-search/shared/components/user-list/user-list.component';
+import { NbCardModule, NbIconModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(
@@ -32,7 +36,10 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    NbCardModule,
+    NbIconModule,
+    NbEvaIconsModule,
   ],
-  declarations: [GithubSearchComponent],
+  declarations: [GithubSearchComponent, UserListComponent],
 })
 export class GithubSearchModule {}
