@@ -10,16 +10,15 @@ import { AbstractService } from '@portifolio/shared';
 export class UsersService extends AbstractService<User> {
   constructor(protected httpClient: HttpClient) {
     super(httpClient);
+    this.baseUrl = `${this.baseUrl}/users`;
   }
 
-  protected instatiateItem(response: unknown): User {
-    // todo - handle instantiate
-    return new User();
+  protected instatiateItem(user: never): User {
+    return new User(user);
   }
 
-  protected instatiateItems(response: unknown): User[] {
-    // todo - handle instatiate items
-    return [new User()];
+  protected instatiateItems(users: User[]): User[] {
+    return users.map((item) => new User(item));
   }
 
   protected handleError(): Observable<void> {

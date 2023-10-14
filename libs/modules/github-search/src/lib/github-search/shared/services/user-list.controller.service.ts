@@ -1,7 +1,6 @@
 import { Subject } from 'rxjs';
-import { UsersService } from './../../../shared/services/users.service';
 import { Injectable } from '@angular/core';
-import { User } from '../../../shared';
+import { SearchService, User } from '../../../shared';
 import { SearchInputManagementInterface } from '@portifolio/search-input';
 
 @Injectable({
@@ -10,11 +9,19 @@ import { SearchInputManagementInterface } from '@portifolio/search-input';
 export class UserListControllerService
   implements SearchInputManagementInterface<User>
 {
-  constructor(private usersService: UsersService) {}
+  private _newItemsLoaded$?: Subject<User[]> = new Subject();
 
-  newItemsLoaded$?: Subject<User[]> = new Subject();
+  constructor(private searchService: SearchService) {
+    this.searchQueryChanged('carloseduardov');
+  }
 
-  searchQueryChanged(query: string): void {
-    this.usersService.findAll().subscribe();
+  get newItemsLoaded$() {
+    return this._newItemsLoaded$;
+  }
+
+  public searchQueryChanged(query: string): void {
+    this.searchService.searchByUsers(query).subscribe({
+      next: (users: User[]) => this._newItemsLoaded$?.next(users),
+    });
   }
 }
