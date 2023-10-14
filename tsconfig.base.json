@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@portifolio/github-search": ["libs/modules/github-search/src/index.ts"],
+      "@portifolio/search-input": ["libs/shared/search-input/src/index.ts"],
       "@portifolio/ui-template": ["libs/ui/ui-template/src/index.ts"]
     }
   },
