@@ -17,7 +17,12 @@
         "tsConfig": "apps/portifolio/tsconfig.app.json",
         "assets": [
           "apps/portifolio/src/favicon.ico",
-          "apps/portifolio/src/assets"
+          "apps/portifolio/src/assets",
+          {
+            "input": "libs/modules/github-search/src/assets/translations",
+            "glob": "*.json",
+            "output": "assets/i18n/translations/git"
+          }
         ],
         "styles": [
           "apps/portifolio/src/styles.scss",
