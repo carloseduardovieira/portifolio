@@ -10,6 +10,7 @@ export class UserListControllerService
   implements SearchInputManagementInterface<User>
 {
   public bindLabel = 'username';
+  public bindValue = 'username';
 
   constructor(private searchService: SearchService) {}
 

@@ -15,10 +15,15 @@
 </div>
 
 <nb-card class="list">
-  <nb-card-body>
+  <nb-card-body *ngIf="itemList.length">
     <cdk-virtual-scroll-viewport itemSize="50" class="list__viewport">
       <nb-list>
-        <nb-list-item *cdkVirtualFor="let item of itemList; trackBy: trackBy">
+        <nb-list-item
+          *cdkVirtualFor="
+            let item of itemList;
+            trackBy: trackByFn.bind(this, bindValue)
+          "
+        >
           {{ item[bindLabel] }}
         </nb-list-item>
       </nb-list>

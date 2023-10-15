@@ -71,8 +71,8 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
-  public trackBy(idx: number, item: M) {
-    return item[this.bindValue];
+  public trackByFn(bindValue: string, idx: number, item: M) {
+    return item[bindValue];
   }
 
   private watchTextInputChanges(): void {
