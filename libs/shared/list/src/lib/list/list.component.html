@@ -1,0 +1,25 @@
+<div class="search-input">
+  <nb-card>
+    <nb-card-body>
+      <input
+        type="text"
+        nbInput
+        fullWidth
+        status="basic"
+        [placeholder]="'SEARCH.PLACEHOLDER' | translate"
+        autocomplete="off"
+        (keyup)="eventHandler($any($event))"
+      />
+    </nb-card-body>
+  </nb-card>
+</div>
+
+<nb-card>
+  <nb-card-body>
+    <nb-list>
+      <nb-list-item *ngFor="let item of itemList">
+        {{ item[bindLabel] }}
+      </nb-list-item>
+    </nb-list>
+  </nb-card-body>
+</nb-card>
