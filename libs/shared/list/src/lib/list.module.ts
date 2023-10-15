@@ -11,6 +11,7 @@ import {
 } from '@nebular/theme';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 const components = [ListComponent];
 
@@ -23,6 +24,7 @@ const components = [ListComponent];
     NbListModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ScrollingModule,
   ],
   declarations: [...components],
   exports: components,

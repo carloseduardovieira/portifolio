@@ -1,4 +1,6 @@
 .list {
-  max-height: 60vh;
-  overflow-y: auto;
+  &__viewport {
+    height: 60vh;
+    overflow-y: auto;
+  }
 }
