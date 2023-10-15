@@ -13,6 +13,8 @@ import { ListModule } from '@portifolio/list';
 import { GithubSearchComponent } from './github-search/github-search.component';
 import { UserListControllerService } from './github-search/services/user-list.controller.service';
 import { SearchService } from './shared';
+import { GithubUserComponent } from './github-user/github-user.component';
+import { GithubUsersComponent } from './github-users/github-users.component';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -42,7 +44,11 @@ export function createTranslateLoader(http: HttpClient) {
     NbEvaIconsModule,
     NbListModule,
   ],
-  declarations: [GithubSearchComponent],
+  declarations: [
+    GithubSearchComponent,
+    GithubUserComponent,
+    GithubUsersComponent,
+  ],
   providers: [UsersService, SearchService, UserListControllerService],
 })
 export class GithubSearchModule {}

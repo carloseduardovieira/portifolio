@@ -24,7 +24,12 @@
             trackBy: trackByFn.bind(this, bindValue)
           "
         >
-          {{ item[bindLabel] }}
+          <a
+            class="custom-link"
+            [routerLink]="['/search/users/' + item[bindLabel]]"
+            routerLinkActive="router-link-active"
+            >{{ item[bindLabel] }}</a
+          >
         </nb-list-item>
       </nb-list>
     </cdk-virtual-scroll-viewport>

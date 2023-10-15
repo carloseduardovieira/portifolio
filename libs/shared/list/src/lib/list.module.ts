@@ -12,6 +12,7 @@ import {
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { RouterModule } from '@angular/router';
 
 const components = [ListComponent];
 
@@ -19,6 +20,7 @@ const components = [ListComponent];
   imports: [
     CommonModule,
     TranslateModule,
+    RouterModule,
     NbInputModule,
     NbCardModule,
     NbListModule,
