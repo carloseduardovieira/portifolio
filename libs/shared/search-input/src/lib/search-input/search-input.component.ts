@@ -45,12 +45,14 @@ export class SearchInputComponent implements OnInit {
         distinctUntilChanged(),
         switchMap((term) => {
           if (term && term.length > 3) {
-            return of('');
+            return of(term);
           }
 
-          return of(term);
+          return of('');
         })
       )
-      .subscribe((term: string) => this.management.searchQueryChanged(term));
+      .subscribe(
+        (term: string) => term && this.management.searchQueryChanged(term)
+      );
   }
 }

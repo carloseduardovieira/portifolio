@@ -1,4 +1,4 @@
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { SearchService, User } from '../../../shared';
 import { SearchInputManagementInterface } from '@portifolio/search-input';
@@ -9,19 +9,21 @@ import { SearchInputManagementInterface } from '@portifolio/search-input';
 export class UserListControllerService
   implements SearchInputManagementInterface<User>
 {
-  private _newItemsLoaded$?: Subject<User[]> = new Subject();
+  private _newItemsLoaded$: Subject<User[]> = new Subject();
 
-  constructor(private searchService: SearchService) {
-    this.searchQueryChanged('carloseduardov');
-  }
+  constructor(private searchService: SearchService) {}
 
   get newItemsLoaded$() {
-    return this._newItemsLoaded$;
+    return this._newItemsLoaded$ as Observable<User[]>;
   }
 
   public searchQueryChanged(query: string): void {
+    console.log('query changed');
     this.searchService.searchByUsers(query).subscribe({
-      next: (users: User[]) => this._newItemsLoaded$?.next(users),
+      next: (users: User[]) => {
+        console.log('loausers', users);
+        this._newItemsLoaded$.next(users);
+      },
     });
   }
 }

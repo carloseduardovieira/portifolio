@@ -11,7 +11,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { UserListComponent } from './github-search/shared/components/user-list/user-list.component';
-import { NbCardModule, NbIconModule } from '@nebular/theme';
+import { NbCardModule, NbIconModule, NbListModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { UserListControllerService } from './github-search/shared/services';
 import { SearchService } from './shared';
@@ -42,8 +42,9 @@ export function createTranslateLoader(http: HttpClient) {
     NbCardModule,
     NbIconModule,
     NbEvaIconsModule,
+    NbListModule,
   ],
   declarations: [GithubSearchComponent, UserListComponent],
-  providers: [UsersService, UserListControllerService, SearchService],
+  providers: [UsersService, SearchService, UserListControllerService],
 })
 export class GithubSearchModule {}

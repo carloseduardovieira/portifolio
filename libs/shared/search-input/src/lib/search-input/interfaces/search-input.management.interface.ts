@@ -1,6 +1,6 @@
-import { Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 
 export interface SearchInputManagementInterface<M> {
-  newItemsLoaded$?: Subject<M[]>;
+  newItemsLoaded$?: Observable<M[]>;
   searchQueryChanged(query: string): void;
 }

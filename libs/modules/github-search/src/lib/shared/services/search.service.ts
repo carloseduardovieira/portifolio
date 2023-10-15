@@ -2,7 +2,7 @@ import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GithubSearchHttpResponse, User } from '../models';
-import { AbstractService } from '@portifolio/shared';
+import { AbstractService } from '@portifolio/core';
 
 @Injectable({
   providedIn: 'root',

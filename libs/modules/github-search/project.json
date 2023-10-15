@@ -2,7 +2,7 @@
   "name": "github-search",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/modules/github-search/src",
-  "prefix": "module",
+  "prefix": "por",
   "tags": [],
   "projectType": "library",
   "targets": {

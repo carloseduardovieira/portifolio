@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@portifolio/core": ["libs/core/src/index.ts"],
       "@portifolio/github-search": ["libs/modules/github-search/src/index.ts"],
       "@portifolio/search-input": ["libs/shared/search-input/src/index.ts"],
       "@portifolio/shared": ["libs/shared/shared/src/index.ts"],

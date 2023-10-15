@@ -4,7 +4,7 @@ import { UserListControllerService } from '../../services';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'module-user-list',
+  selector: 'por-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss'],
 })
@@ -16,6 +16,7 @@ export class UserListComponent implements OnInit, OnDestroy {
   constructor(private userListCtrl: UserListControllerService) {}
 
   ngOnInit(): void {
+    this.initUserList();
     this.watchUserListChanges();
   }
 
@@ -23,9 +24,13 @@ export class UserListComponent implements OnInit, OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
+  private initUserList(): void {
+    this.userListCtrl.searchQueryChanged('carloseduardov');
+  }
+
   private watchUserListChanges(): void {
     this.subscriptions.add(
-      this.userListCtrl.newItemsLoaded$?.subscribe({
+      this.userListCtrl.newItemsLoaded$.subscribe({
         next: (users: User[]) => {
           this.userList = users;
         },
