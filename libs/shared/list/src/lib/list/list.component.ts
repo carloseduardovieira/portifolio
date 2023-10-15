@@ -33,6 +33,8 @@ interface IList {
 export class ListComponent<M extends IList> implements OnInit, OnDestroy {
   public termControl: FormControl;
   public bindLabel: string;
+  public bindValue = 'id';
+
   public termValidator = /[!@#$%^&*()_+\-=\\[\]{};':"\\|,.<>\\/?]/;
 
   public itemList: M[] = [];
@@ -51,6 +53,10 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
       this.termValidator = this.management.termValidator;
     }
 
+    if (this.management.bindValue) {
+      this.bindValue = this.management.bindValue;
+    }
+
     this.termControl = new FormControl('', [
       this.customValidators.controlValidator(this.termValidator),
     ]);
@@ -63,6 +69,10 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
+  }
+
+  public trackBy(idx: number, item: M) {
+    return item[this.bindValue];
   }
 
   private watchTextInputChanges(): void {
