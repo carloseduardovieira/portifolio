@@ -34,6 +34,7 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
   public termControl: FormControl;
   public bindLabel: string;
   public bindValue = 'id';
+  public placeholder: string;
 
   public termValidator = /[!@#$%^&*()_+\-=\\[\]{};':"\\|,.<>\\/?]/;
 
@@ -48,6 +49,7 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
     private customValidators: CustomValidators
   ) {
     this.bindLabel = this.management.bindLabel;
+    this.placeholder = this.management.placeholder;
 
     if (this.management.termValidator) {
       this.termValidator = this.management.termValidator;
