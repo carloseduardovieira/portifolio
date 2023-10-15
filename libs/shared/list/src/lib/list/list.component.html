@@ -18,7 +18,7 @@
   <nb-card-body>
     <cdk-virtual-scroll-viewport itemSize="50" class="list__viewport">
       <nb-list>
-        <nb-list-item *cdkVirtualFor="let item of itemList">
+        <nb-list-item *cdkVirtualFor="let item of itemList; trackBy: trackBy">
           {{ item[bindLabel] }}
         </nb-list-item>
       </nb-list>
