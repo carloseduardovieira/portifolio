@@ -57,7 +57,7 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.initUserList('carloseduardov');
+    this.initItemsList('carloseduardov');
     this.watchTextInputChanges();
   }
 
@@ -79,10 +79,10 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
           return of('');
         })
       )
-      .subscribe((term: string) => term && this.initUserList(term));
+      .subscribe((term: string) => term && this.initItemsList(term));
   }
 
-  private initUserList(term: string): void {
+  private initItemsList(term: string): void {
     this.management.loadItemsByTerm(term).subscribe({
       next: (items: M[]) => {
         this.itemList = items;
