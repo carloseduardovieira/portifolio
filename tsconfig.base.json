@@ -20,7 +20,8 @@
       "@portifolio/list": ["libs/shared/list/src/index.ts"],
       "@portifolio/search-input": ["libs/shared/search-input/src/index.ts"],
       "@portifolio/shared": ["libs/shared/shared/src/index.ts"],
-      "@portifolio/ui-template": ["libs/ui/ui-template/src/index.ts"]
+      "@portifolio/ui-template": ["libs/ui/ui-template/src/index.ts"],
+      "@utils": ["libs/utils"]
     }
   },
   "exclude": ["node_modules", "tmp"]

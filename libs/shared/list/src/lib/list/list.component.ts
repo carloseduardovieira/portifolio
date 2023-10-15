@@ -1,3 +1,4 @@
+import { CustomValidators } from './../../../../../utils/custom-validators';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -6,8 +7,8 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
+
 import {
-  Subject,
   Subscription,
   debounceTime,
   distinctUntilChanged,
@@ -16,6 +17,7 @@ import {
   switchMap,
 } from 'rxjs';
 import { SearchInputManagementInterface } from './interfaces';
+import { FormControl } from '@angular/forms';
 
 interface IList {
   [key: string]: string | undefined;
@@ -25,22 +27,33 @@ interface IList {
   selector: 'por-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
+  providers: [CustomValidators],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListComponent<M extends IList> implements OnInit, OnDestroy {
-  private filterString: Subject<string> = new Subject<string>();
+  public termControl: FormControl;
+  public bindLabel: string;
+  public termValidator = /[!@#$%^&*()_+\-=\\[\]{};':"\\|,.<>\\/?]/;
 
   public itemList: M[] = [];
-  public bindLabel: string;
 
   private subscriptions = new Subscription();
 
   constructor(
     @Inject('SearchInputManagementInterface')
     private management: SearchInputManagementInterface<M>,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private customValidators: CustomValidators
   ) {
-    this.bindLabel = this.management.bindLabel as string;
+    this.bindLabel = this.management.bindLabel;
+
+    if (this.management.termValidator) {
+      this.termValidator = this.management.termValidator;
+    }
+
+    this.termControl = new FormControl('', [
+      this.customValidators.controlValidator(this.termValidator),
+    ]);
   }
 
   ngOnInit(): void {
@@ -52,18 +65,18 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
-  public eventHandler = (event: { target: { value: string } }) => {
-    this.filterString.next(event.target.value);
-  };
-
   private watchTextInputChanges(): void {
-    this.filterString
+    this.termControl.valueChanges
       .pipe(
         debounceTime(300),
         map((e) => e.trim()),
         distinctUntilChanged(),
         switchMap((term) => {
-          return of(term);
+          if (this.termControl.valid) {
+            return of(term);
+          }
+
+          return of('');
         })
       )
       .subscribe((term: string) => term && this.initUserList(term));

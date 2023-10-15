@@ -5,10 +5,10 @@
         type="text"
         nbInput
         fullWidth
-        status="basic"
+        [status]="termControl.valid ? 'basic' : 'danger'"
         [placeholder]="'SEARCH.PLACEHOLDER' | translate"
         autocomplete="off"
-        (keyup)="eventHandler($any($event))"
+        [formControl]="termControl"
       />
     </nb-card-body>
   </nb-card>

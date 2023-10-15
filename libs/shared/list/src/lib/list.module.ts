@@ -10,6 +10,7 @@ import {
   NbStatusService,
 } from '@nebular/theme';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const components = [ListComponent];
 
@@ -21,6 +22,7 @@ const components = [ListComponent];
     NbCardModule,
     NbListModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   declarations: [...components],
   exports: components,
