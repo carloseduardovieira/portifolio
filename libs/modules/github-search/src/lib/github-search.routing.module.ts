@@ -1,8 +1,8 @@
 import { Route, RouterModule } from '@angular/router';
 import { GithubSearchComponent } from './github-search/github-search.component';
 import { NgModule } from '@angular/core';
-import { GithubUserComponent } from './github-user/github-user.component';
-import { GithubUsersComponent } from './github-users/github-users.component';
+import { GithubUserComponent } from './github-search/components/github-user/github-user.component';
+import { GithubUsersComponent } from './github-search/components/github-users/github-users.component';
 
 export const routes: Route[] = [
   {

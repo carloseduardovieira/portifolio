@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserListControllerService } from '../github-search/services/user-list.controller.service';
+import { UserListControllerService } from '../../services/user-list.controller.service';
 
 @Component({
   selector: 'por-github-users',
