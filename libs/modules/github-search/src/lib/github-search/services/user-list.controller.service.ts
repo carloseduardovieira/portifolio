@@ -10,6 +10,7 @@ export class UserListControllerService
   implements SearchInputManagementInterface<User>
 {
   public placeholder = 'SEARCH.PLACEHOLDER';
+  public initialValue = 'carloseduardov';
   public bindLabel = 'username';
   public bindValue = 'username';
 

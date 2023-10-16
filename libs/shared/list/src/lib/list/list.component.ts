@@ -65,7 +65,7 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.initItemsList('carloseduardov');
+    this.initItemsList(this.management.initialValue);
     this.watchTextInputChanges();
   }
 
