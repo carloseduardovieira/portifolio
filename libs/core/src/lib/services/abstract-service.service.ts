@@ -18,12 +18,12 @@ export abstract class AbstractService<M> {
 
   protected abstract handleError(): Observable<void>;
 
-  public findById(baseUrl?: string): Observable<M> {
+  public findById(id: string, baseUrl?: string): Observable<M> {
     if (!baseUrl) {
       baseUrl = this.baseUrl;
     }
 
-    return this.http.get(baseUrl).pipe(
+    return this.http.get(`${baseUrl}/${id}`).pipe(
       catchError(() => {
         return this.handleError();
       }),
