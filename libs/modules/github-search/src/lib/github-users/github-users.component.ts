@@ -3,8 +3,7 @@ import { UserListControllerService } from '../github-search/services/user-list.c
 
 @Component({
   selector: 'por-github-users',
-  templateUrl: './github-users.component.html',
-  styleUrls: ['./github-users.component.scss'],
+  template: '<por-list></por-list>',
   providers: [
     {
       provide: 'SearchInputManagementInterface',
