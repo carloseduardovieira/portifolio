@@ -9,7 +9,16 @@ import { UiTemplateModule } from '@portifolio/ui-template';
   imports: [RouterModule, UiTemplateModule, NbSidebarModule],
   providers: [NbSidebarService],
   selector: 'portifolio-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template: `
+    <nb-layout>
+      <nb-layout-header fixed>Carlos Eduardo Vieira</nb-layout-header>
+
+      <nb-sidebar>Github - Search</nb-sidebar>
+
+      <nb-layout-column>
+        <router-outlet></router-outlet>
+      </nb-layout-column>
+    </nb-layout>
+  `,
 })
 export class AppComponent {}
