@@ -1,8 +1,10 @@
-.list {
-  &__viewport {
-    height: 60vh;
-    overflow-y: auto;
+.infinity-list {
+  &__item {
+    height: 50px;
   }
+
+  height: 60vh;
+  overflow-y: auto;
 }
 
 .custom-link {

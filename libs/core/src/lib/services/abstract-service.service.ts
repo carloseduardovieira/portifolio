@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, timeout } from 'rxjs';
 
@@ -44,5 +44,34 @@ export abstract class AbstractService<M> {
       timeout(this.timeout),
       map((response: unknown) => this.instatiateItems(response))
     );
+  }
+
+  public findAllPaginated(
+    term: string,
+    page: number,
+    baseUrl?: string,
+    sortBy = 'createdAt',
+    sortDirection = 'ASC',
+    perPage = 25
+  ): Observable<M[]> {
+    if (!baseUrl) {
+      baseUrl = this.baseUrl;
+    }
+
+    return this.http
+      .get(`${baseUrl}`, {
+        params: new HttpParams()
+          .set('q', term)
+          .set('page', page)
+          .set('sort', `${sortBy}, ${sortDirection}`)
+          .set('per_page', perPage),
+      })
+      .pipe(
+        catchError(() => {
+          return this.handleError();
+        }),
+        timeout(this.timeout),
+        map((response: unknown) => this.instatiateItems(response))
+      );
   }
 }

@@ -6,5 +6,5 @@ export interface SearchInputManagementInterface<M> {
   initialValue: string;
   bindValue?: string;
   termValidator?: RegExp;
-  loadItemsByTerm(term: string): Observable<M[]>;
+  loadItemsByTerm(term: string, page: number): Observable<M[]>;
 }

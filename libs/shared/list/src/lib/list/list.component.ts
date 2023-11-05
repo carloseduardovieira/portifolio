@@ -18,6 +18,7 @@ import {
 } from 'rxjs';
 import { SearchInputManagementInterface } from './interfaces';
 import { FormControl } from '@angular/forms';
+import { PorInfinityScrollComponent } from '@portifolio/core';
 
 interface IList {
   [key: string]: string | undefined;
@@ -30,7 +31,10 @@ interface IList {
   providers: [CustomValidators],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ListComponent<M extends IList> implements OnInit, OnDestroy {
+export class ListComponent<M extends IList>
+  extends PorInfinityScrollComponent
+  implements OnInit, OnDestroy
+{
   public termControl: FormControl;
   public bindLabel: string;
   public bindValue = 'id';
@@ -48,6 +52,8 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
     private cd: ChangeDetectorRef,
     private customValidators: CustomValidators
   ) {
+    super();
+
     this.bindLabel = this.management.bindLabel;
     this.placeholder = this.management.placeholder;
 
@@ -65,7 +71,8 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.initItemsList(this.management.initialValue);
+    this.term = this.management.initialValue;
+    this.loadItems(this.term);
     this.watchTextInputChanges();
   }
 
@@ -73,8 +80,21 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
+  public countLoadedItems(): number {
+    return this.itemList.length;
+  }
+
   public trackByFn(bindValue: string, idx: number, item: M) {
     return item[bindValue];
+  }
+
+  public loadItems(term: string): void {
+    this.management.loadItemsByTerm(term, this.page).subscribe({
+      next: (items: M[]) => {
+        this.itemList = items;
+        this.cd.markForCheck();
+      },
+    });
   }
 
   private watchTextInputChanges(): void {
@@ -91,15 +111,12 @@ export class ListComponent<M extends IList> implements OnInit, OnDestroy {
           return of('');
         })
       )
-      .subscribe((term: string) => term && this.initItemsList(term));
-  }
-
-  private initItemsList(term: string): void {
-    this.management.loadItemsByTerm(term).subscribe({
-      next: (items: M[]) => {
-        this.itemList = items;
-        this.cd.markForCheck();
-      },
-    });
+      .subscribe((term: string) => {
+        if (term) {
+          this.resetScrollInfo();
+          this.term = term;
+          this.loadItems(term);
+        }
+      });
   }
 }

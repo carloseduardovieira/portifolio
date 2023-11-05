@@ -10,13 +10,13 @@ export class UserListControllerService
   implements SearchInputManagementInterface<User>
 {
   public placeholder = 'SEARCH.PLACEHOLDER';
-  public initialValue = 'carloseduardov';
+  public initialValue = 'carloseduardo';
   public bindLabel = 'username';
   public bindValue = 'username';
 
   constructor(private searchService: SearchService) {}
 
-  public loadItemsByTerm(term: string): Observable<User[]> {
-    return this.searchService.searchByUsers(term);
+  public loadItemsByTerm(term: string, page: number): Observable<User[]> {
+    return this.searchService.findAllPaginated(term, page);
   }
 }

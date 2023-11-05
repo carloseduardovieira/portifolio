@@ -14,24 +14,26 @@
   </nb-card>
 </div>
 
-<nb-card class="list">
+<nb-card>
   <nb-card-body *ngIf="itemList.length">
-    <cdk-virtual-scroll-viewport itemSize="50" class="list__viewport">
-      <nb-list>
-        <nb-list-item
-          *cdkVirtualFor="
-            let item of itemList;
-            trackBy: trackByFn.bind(this, bindValue)
-          "
-        >
+    <div #containerRef class="infinity-list">
+      <div
+        class="search-results"
+        infinite-scroll
+        [infiniteScrollContainer]="containerRef"
+        [infiniteScrollDistance]="infiniteScrollDistance"
+        [infiniteScrollThrottle]="infiniteScrollThrottle"
+        (scrolled)="onScrollDown()"
+      >
+        <div class="infinity-list__item" *ngFor="let item of itemList">
           <a
             class="custom-link"
             [routerLink]="['/search/users/' + item[bindLabel]]"
             routerLinkActive="router-link-active"
             >{{ item[bindLabel] }}</a
           >
-        </nb-list-item>
-      </nb-list>
-    </cdk-virtual-scroll-viewport>
+        </div>
+      </div>
+    </div>
   </nb-card-body>
 </nb-card>

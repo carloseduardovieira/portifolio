@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { RouterModule } from '@angular/router';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 const components = [ListComponent];
 
@@ -27,6 +28,7 @@ const components = [ListComponent];
     HttpClientModule,
     ReactiveFormsModule,
     ScrollingModule,
+    InfiniteScrollModule,
   ],
   declarations: [...components],
   exports: components,

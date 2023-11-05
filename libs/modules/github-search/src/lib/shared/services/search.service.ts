@@ -13,10 +13,6 @@ export class SearchService extends AbstractService<User> {
     this.baseUrl = `${this.baseUrl}/search/users`;
   }
 
-  public searchByUsers(query: string): Observable<User[]> {
-    return super.findAll(`${this.baseUrl}?q=${query}`);
-  }
-
   protected instatiateItem(user: User): User {
     return new User(user);
   }
