@@ -1,0 +1,36 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="side">
+    <vsm-vessel-route-list
+      (itemClicked)="onItemClicked()"
+    ></vsm-vessel-route-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="container__sidenav-content">
+    @if (!sidenav.opened) {
+    <button
+      (click)="sidenav.toggle()"
+      class="container__sidenav-content--button-open"
+      mat-fab
+      color="light"
+      aria-label="menu button"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    } @else {
+    <button
+      class="container__sidenav-content--button-close"
+      (click)="sidenav.toggle()"
+      aria-label="Toggle icon"
+      mat-raised-button
+    >
+      <mat-icon>arrow_back_ios</mat-icon>
+    </button>
+    }
+
+    <vsm-vessels-route-map></vsm-vessels-route-map>
+
+    <vsm-bottom-drawer #bottomDrawer>
+      <vsm-vessel-route-speed-chart></vsm-vessel-route-speed-chart>
+    </vsm-bottom-drawer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

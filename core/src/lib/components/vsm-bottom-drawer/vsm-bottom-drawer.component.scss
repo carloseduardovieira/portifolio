@@ -1,0 +1,32 @@
+.bottom-drawer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.4s ease-in-out;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 98%;
+  z-index: 2;
+
+  &__target-area {
+    align-items: center;
+    background-color: #238ccb;
+    border: 1px solid;
+    color: #fff;
+    cursor: grab;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+  }
+}
+
+.button--close {
+  position: absolute;
+  background: #238ccb;
+  color: #fff;
+  right: 35px;
+  top: 10px;
+}

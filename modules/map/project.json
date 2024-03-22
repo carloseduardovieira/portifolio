@@ -1,0 +1,9 @@
+{
+  "name": "map",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "modules/map/src",
+  "prefix": "vessel-ship-management",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

@@ -1,0 +1,18 @@
+<vsm-list (itemClicked)="hasRouteSelection($event)">
+  <ng-template #listItem let-item="item">
+    <div class="list-container__line">
+      <div class="list-container__line-item">
+        <span class="list-container__line-item--icon-round">
+          <mat-icon>directions_boat</mat-icon>
+        </span>
+        <span class="list-container__line-item-route">
+          {{ item.from_port }}-{{ item.to_port }}
+        </span>
+
+        <span class="list-container__line-item-duration">{{
+          item.leg_duration | msToDuration
+        }}</span>
+      </div>
+    </div>
+  </ng-template>
+</vsm-list>

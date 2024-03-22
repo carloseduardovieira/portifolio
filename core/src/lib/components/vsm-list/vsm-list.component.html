@@ -1,0 +1,40 @@
+<div class="list-container">
+  <mat-form-field appearance="outline" class="list-container__search">
+    <input
+      matInput
+      placeholder="Search..."
+      [formControl]="searchInputControl"
+    />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <mat-selection-list
+    hideSingleSelectionIndicator="true"
+    multiple="false"
+    role="list"
+    class="list-container__list"
+  >
+    <cdk-virtual-scroll-viewport
+      itemSize="90"
+      class="list-container__list-viewport"
+    >
+      <div
+        *cdkVirtualFor="let item of itemList$ | async"
+        class="list-container__list-viewport--item"
+      >
+        <mat-list-option
+          class="list-container__list-viewport--item"
+          [value]="item"
+          role="listitem"
+          (click)="itemClicked.next(item)"
+        >
+          <ng-container
+            [ngTemplateOutlet]="listItem"
+            [ngTemplateOutletContext]="{ item: item }"
+          >
+          </ng-container>
+        </mat-list-option>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </mat-selection-list>
+</div>
