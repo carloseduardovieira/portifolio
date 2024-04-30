@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@cvieira/contacts": ["modules/contacts/src/index.ts"],
       "@vessel-ship-management/core": ["core/src/index.ts"],
       "@vessel-ship-management/map": ["modules/map/src/index.ts"]
     }

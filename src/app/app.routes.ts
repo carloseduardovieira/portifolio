@@ -7,6 +7,11 @@ export const appRoutes: Route[] = [
       import('@vessel-ship-management/map').then((c) => c.MapComponent),
   },
   {
+    path: 'contacts',
+    loadComponent: () =>
+      import('@cvieira/contacts').then((c) => c.ContactsComponent),
+  },
+  {
     path: '',
     redirectTo: 'map',
     pathMatch: 'full',

@@ -1,0 +1,9 @@
+{
+  "name": "contacts",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "modules/contacts/src",
+  "prefix": "cvieira",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}
