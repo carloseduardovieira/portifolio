@@ -5,7 +5,7 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { environment } from '@vessel-ship-management/core';
+import { environment } from '@cvieira/core';
 import * as mapboxgl from 'mapbox-gl';
 import { Subscription } from 'rxjs';
 

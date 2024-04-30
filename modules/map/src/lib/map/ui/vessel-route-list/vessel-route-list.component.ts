@@ -6,10 +6,7 @@ import {
 } from '@angular/core';
 
 import { VesselRoute } from '../../models/vessel-route.model';
-import {
-  MsToDurationPipe,
-  VsmListComponent,
-} from '@vessel-ship-management/core';
+import { MsToDurationPipe, VsmListComponent } from '@cvieira/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MapControllerService } from '../../map-controller.service';
 

@@ -6,7 +6,7 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { DateUtils } from '@vessel-ship-management/core';
+import { DateUtils } from '@cvieira/core';
 import { Chart, ScriptableLineSegmentContext } from 'chart.js/auto';
 import { map, Subscription } from 'rxjs';
 

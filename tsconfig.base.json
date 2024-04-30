@@ -16,8 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@cvieira/contacts": ["modules/contacts/src/index.ts"],
-      "@vessel-ship-management/core": ["core/src/index.ts"],
-      "@vessel-ship-management/map": ["modules/map/src/index.ts"]
+      "@cvieira/core": ["core/src/index.ts"],
+      "@cvieira/map": ["modules/map/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

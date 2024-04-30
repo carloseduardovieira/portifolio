@@ -1,1 +1,15 @@
-<p>contacts works!</p>
+@if (formConfig$ | async; as formConfig) {
+<div class="dynamic-form-config">
+  <form>
+    <h3 class="form-heading">
+      {{ formConfig.description }}
+    </h3>
+
+    @for (control of formConfig.controls | keyvalue; track control.key){
+    <div class="form-field">
+      <label [for]="control.key">{{ control.value.label }}</label>
+    </div>
+    }
+  </form>
+</div>
+}

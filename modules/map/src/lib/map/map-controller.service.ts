@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { VsmListManagement } from '@vessel-ship-management/core';
+import { VsmListManagement } from '@cvieira/core';
 import { VesselRoute } from './models/vessel-route.model';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { VesselsService } from './data-access/vessels.service';

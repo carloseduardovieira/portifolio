@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { VsmBottomDrawerComponent } from '@vessel-ship-management/core';
+import { VsmBottomDrawerComponent } from '@cvieira/core';
 
 import { MapControllerService } from './map-controller.service';
 import { VesselRouteListComponent } from './ui/vessel-route-list/vessel-route-list.component';
