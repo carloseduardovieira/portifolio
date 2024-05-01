@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { DynamicFormConfig } from '@cvieira/core';
+import { DynamicControlPipe, DynamicFormConfig } from '@cvieira/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'cvieira-contacts',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, DynamicControlPipe],
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.scss',
 })
