@@ -7,10 +7,10 @@ export default defineConfig({
     ...nxE2EPreset(__filename, {
       cypressDir: 'src',
       webServerCommands: {
-        default: 'nx run vessel-ship-management:serve:development',
-        production: 'nx run vessel-ship-management:serve:production',
+        default: 'nx run cvieira-portifolio:serve:development',
+        production: 'nx run cvieira-portifolio:serve:production',
       },
-      ciWebServerCommand: 'nx run vessel-ship-management:serve-static',
+      ciWebServerCommand: 'nx run cvieira-portifolio:serve-static',
     }),
     baseUrl: 'http://localhost:4200',
   },

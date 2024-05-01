@@ -2,7 +2,7 @@
   "name": "core",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "core/src",
-  "prefix": "vessel-ship-management",
+  "prefix": "cvieira-portifolio",
   "tags": [],
   "projectType": "library",
   "targets": {}

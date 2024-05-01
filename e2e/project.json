@@ -5,5 +5,5 @@
   "sourceRoot": "e2e/src",
   "targets": {},
   "tags": [],
-  "implicitDependencies": ["vessel-ship-management"]
+  "implicitDependencies": ["cvieira-portifolio"]
 }

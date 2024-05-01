@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'vessel-ship-management',
+  displayName: 'cvieira-portifolio',
   preset: './jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: './coverage/vessel-ship-management',
+  coverageDirectory: './coverage/cvieira-portifolio',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
