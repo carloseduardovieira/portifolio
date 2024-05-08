@@ -10,6 +10,7 @@
           <label [for]="control.key">{{ control.value.label }}</label>
           <ng-container
             [ngComponentOutlet]="control.value.controlType | dynamicControl"
+            [ngComponentOutletInjector]="control.key | controlInjector: control.value"
           ></ng-container>
         </div>
         }

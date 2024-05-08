@@ -5,12 +5,13 @@ import { Observable, tap } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DynamicFormConfig } from '../../../models/dynamic-forms.model';
+import { ControlInjectorPipe } from '../../../pipes/control-injector/control-injector.pipe';
 
 
 @Component({
   selector: 'ben-dynamic-form-template',
   standalone: true,
-  imports: [CommonModule, DynamicControlPipe,],
+  imports: [CommonModule, DynamicControlPipe, ControlInjectorPipe],
   templateUrl: './dynamic-form-template.component.html',
   styleUrl: './dynamic-form-template.component.scss',
 })
