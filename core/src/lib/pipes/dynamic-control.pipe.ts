@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform, Type } from '@angular/core';
 import { DynamicControl } from '../models';
-import { BenInputComponent } from '../components/ben-input/ben-input.component';
-import { BenSelectComponent } from '../components/ben-select/ben-select.component';
+import { BenInputComponent, BenSelectComponent } from '../components';
+
 
 type DynamicControlsMap = {
   [T in DynamicControl['controlType']]: Type<any>;

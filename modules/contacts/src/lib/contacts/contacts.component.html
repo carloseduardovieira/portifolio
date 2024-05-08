@@ -1,18 +1,2 @@
-@if (formConfig$ | async; as formConfig) {
-<div class="dynamic-form-config">
-  <form>
-    <h3 class="form-heading">
-      {{ formConfig.description }}
-    </h3>
+<ben-dynamic-form-template></ben-dynamic-form-template>
 
-    @for (control of formConfig.controls | keyvalue; track control.key){
-    <div class="form-field">
-      <label [for]="control.key">{{ control.value.label }}</label>
-      <ng-container
-        [ngComponentOutlet]="control.value.controlType | dynamicControl"
-      ></ng-container>
-    </div>
-    }
-  </form>
-</div>
-}

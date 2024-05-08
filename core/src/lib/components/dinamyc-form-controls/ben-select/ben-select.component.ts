@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'ben-input',
+  selector: 'ben-select',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './ben-input.component.html',
-  styleUrl: './ben-input.component.scss',
+  template: ``,
+  styles: ``,
 })
-export class BenInputComponent {}
+export class BenSelectComponent {}
