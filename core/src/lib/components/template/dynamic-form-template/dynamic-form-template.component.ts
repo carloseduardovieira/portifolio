@@ -2,16 +2,15 @@ import { DynamicControlPipe } from './../../../pipes/dynamic-control.pipe';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable, tap } from 'rxjs';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DynamicFormConfig } from '../../../models/dynamic-forms.model';
 import { ControlInjectorPipe } from '../../../pipes/control-injector/control-injector.pipe';
 
-
 @Component({
   selector: 'ben-dynamic-form-template',
   standalone: true,
-  imports: [CommonModule, DynamicControlPipe, ControlInjectorPipe],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, DynamicControlPipe, ControlInjectorPipe],
   templateUrl: './dynamic-form-template.component.html',
   styleUrl: './dynamic-form-template.component.scss',
 })
@@ -19,7 +18,9 @@ export class DynamicFormTemplateComponent implements OnInit {
   formConfig$!: Observable<DynamicFormConfig>;
   form!: FormGroup;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+  ) {}
 
   ngOnInit(): void {
     this.initForm();

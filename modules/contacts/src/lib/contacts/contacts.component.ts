@@ -1,16 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { DynamicFormTemplateComponent } from '@cvieira/core';
 
 
 @Component({
   selector: 'cvieira-contacts',
   standalone: true,
-  imports: [DynamicFormTemplateComponent],
+  imports: [CommonModule, DynamicFormTemplateComponent],
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.scss',
 })
-export class ContactsComponent implements OnInit {
-  ngOnInit(): void {
-      throw "";
-  }
-}
+export class ContactsComponent {}

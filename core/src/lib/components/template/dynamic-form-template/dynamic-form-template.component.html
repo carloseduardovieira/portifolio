@@ -1,6 +1,6 @@
 @if (formConfig$ | async; as formConfig) {
     <div class="dynamic-form-config">
-      <form>
+      <form [formGroup]="form">
         <h3 class="form-heading">
           {{ formConfig.description }}
         </h3>
@@ -16,4 +16,4 @@
         }
       </form>
     </div>
-    }
+}
