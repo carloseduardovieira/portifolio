@@ -1,7 +1,7 @@
-import { CONTROL_DATA } from './../../../pipes/control-injector/control-data.token';
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ControlContainer, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BaseDynamicControl } from '../base-dynamic-control';
 
 
 @Component({
@@ -17,14 +17,5 @@ import { ControlContainer, FormGroup, ReactiveFormsModule } from '@angular/forms
         [type]="control.config.type">
     </ng-container>
               `,
-  styles: ``,
 })
-export class BenInputComponent {
-  control = inject(CONTROL_DATA)
-
-  get formGroup(): FormGroup {
-    return this.parentFormGroup.control as FormGroup;
-  }
-
-  private parentFormGroup = inject(ControlContainer);
-}
+export class BenInputComponent extends BaseDynamicControl {}
