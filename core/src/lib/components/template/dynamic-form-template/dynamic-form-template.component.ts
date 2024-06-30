@@ -34,7 +34,7 @@ export class DynamicFormTemplateComponent implements OnInit {
   
   private initForm(): void {
     this.formConfig$ = this.http
-      .get<DynamicFormConfig>('/assets/form/contacts.form.json')
+      .get<DynamicFormConfig>('/assets/form/users.form.json')
       .pipe(tap(({ controls }) => this.buildForm(controls)));
   }
 

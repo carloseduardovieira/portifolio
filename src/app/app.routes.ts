@@ -6,9 +6,9 @@ export const appRoutes: Route[] = [
     loadComponent: () => import('@cvieira/map').then((c) => c.MapComponent),
   },
   {
-    path: 'contacts',
+    path: 'users',
     loadComponent: () =>
-      import('@cvieira/contacts').then((c) => c.ContactsComponent),
+      import('@cvieira/users').then((c) => c.UsersComponent),
   },
   {
     path: '',

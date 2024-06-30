@@ -21,7 +21,7 @@
           "./src/assets",
           {
             "glob": "**/*",
-            "input": "modules/contacts/src/lib/assets",
+            "input": "modules/users/src/lib/assets",
             "output": "./assets/"
           }
         ],

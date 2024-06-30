@@ -26,7 +26,7 @@
     "role": {
       "id": "role",
       "controlType": "select",
-      "label": "Contact Role",
+      "label": "User Role",
       "value": "admin",
       "options": [
         { "label": "Admin", "value": "admin" },

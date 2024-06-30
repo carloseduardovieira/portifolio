@@ -22,8 +22,8 @@ import { Router, RouterModule } from '@angular/router';
           <mat-list-item role="listitem" (click)="navigateTo('map')"
             >MAP</mat-list-item
           >
-          <mat-list-item role="listitem" (click)="navigateTo('contacts')"
-            >Contacts</mat-list-item
+          <mat-list-item role="listitem" (click)="navigateTo('users')"
+            >Users</mat-list-item
           >
         </mat-list>
       </mat-drawer>

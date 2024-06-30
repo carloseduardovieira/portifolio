@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cvieira/contacts": ["modules/contacts/src/index.ts"],
       "@cvieira/core": ["core/src/index.ts"],
-      "@cvieira/map": ["modules/map/src/index.ts"]
+      "@cvieira/map": ["modules/map/src/index.ts"],
+      "@cvieira/users": ["modules/users/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
