@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform, Type } from '@angular/core';
 import { DynamicControl } from '../models';
-import { BenInputComponent, BenSelectComponent } from '../components';
+import { BenCheckboxComponent, BenInputComponent, BenSelectComponent } from '../components';
 
 
 type DynamicControlsMap = {
@@ -16,6 +16,7 @@ export class DynamicControlPipe implements PipeTransform {
     const controlComponents: DynamicControlsMap = {
       input: BenInputComponent,
       select: BenSelectComponent,
+      checkbox: BenCheckboxComponent,
     };
 
     return controlComponents[controlType];

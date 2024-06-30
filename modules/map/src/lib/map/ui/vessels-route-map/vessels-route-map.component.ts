@@ -59,13 +59,13 @@ export class VesselsRouteMapComponent
   }
 
   ngAfterViewInit(): void {
-    this.map = new mapboxgl.Map({
-      accessToken: environment.mboxKey,
-      container: 'map',
-      style: this.style,
-      zoom: 1,
-      center: [this.lng, this.lat],
-    });
+    // this.map = new mapboxgl.Map({
+    //   accessToken: environment.mboxKey,
+    //   container: 'map',
+    //   style: this.style,
+    //   zoom: 1,
+    //   center: [this.lng, this.lat],
+    // });
   }
 
   private watchVesselRouteSelectionChanges(): void {

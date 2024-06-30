@@ -6,25 +6,38 @@
       "controlType": "input",
       "type": "text",
       "label": "Full Name",
-      "value": ""
+      "value": "",
+      "validators": {
+        "required": true,
+        "minLength": 2,
+        "banWords": ["Test", "Dummy"]
+      }
     },
     "email": {
       "id": "email",
       "controlType": "input",
       "type": "email",
       "label": "Email",
-      "value": ""
+      "value": "",
+      "validators": {
+        "email": true
+      }
     },
     "role": {
       "id": "role",
       "controlType": "select",
       "label": "Contact Role",
-      "value": "",
+      "value": "admin",
       "options": [
         { "label": "Admin", "value": "admin" },
         { "label": "Editor", "value": "editor" },
         { "label": "Guest", "value": "guest" }
       ]
+    },
+    "terms": {
+      "controlType": "checkbox",
+      "label": "Active",
+      "value": true
     }
   }
 }
