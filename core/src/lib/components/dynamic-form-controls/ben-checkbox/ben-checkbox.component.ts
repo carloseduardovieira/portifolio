@@ -13,5 +13,13 @@ import { BaseDynamicControl } from '../base-dynamic-control';
       <label [for]="control.controlKey">{{ control.config.label }}</label>
     </ng-container>
   `,
+  styles: [
+    `
+      :host {
+        display: flex;
+        align-items: center;
+      }
+    `
+  ]
 })
 export class BenCheckboxComponent extends BaseDynamicControl {}
