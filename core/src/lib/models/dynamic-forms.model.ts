@@ -10,11 +10,12 @@ type ValidatorKeys = keyof Omit<typeof Validators & CustomValidators, 'prototype
 
 export interface DynamicControl<T = string> {
   id: string;
-  controlType: 'input' | 'select' | 'checkbox';
+  controlType: 'input' | 'select' | 'checkbox' | 'group';
   type?: string;
   label: string;
   value: T | null;
   options?: DynamicOptions[];
+  controls?: DynamicFormConfig['controls'];
   validators?: {
     [key in ValidatorKeys]?: unknown;
   }
