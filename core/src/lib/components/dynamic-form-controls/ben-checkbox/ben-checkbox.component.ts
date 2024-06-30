@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseDynamicControl } from '../base-dynamic-control';
+import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BaseDynamicControl } from '../base-dynamic-control';
 
 @Component({
   selector: 'ben-checkbox',
@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   template: `
     <ng-container [formGroup]="formGroup">
       <input type="checkbox" [formControlName]="control.controlKey" [checked]="control.config.value">
+      <label [for]="control.controlKey">{{ control.config.label }}</label>
     </ng-container>
   `,
 })

@@ -7,7 +7,6 @@
 
     @for (control of formConfig.controls | keyvalue; track control.key){
     <div class="form-field">
-      <label [for]="control.key">{{ control.value.label }}</label>
       <ng-container [ngComponentOutlet]="control.value.controlType | dynamicControl"
         [ngComponentOutletInjector]="control.key | controlInjector: control.value">
       </ng-container>
