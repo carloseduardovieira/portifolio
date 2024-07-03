@@ -6,27 +6,16 @@
   </mat-sidenav>
 
   <mat-sidenav-content class="container__sidenav-content">
-    @if (!sidenav.opened) {
     <button
       (click)="sidenav.toggle()"
-      class="container__sidenav-content--button-open"
+      class="container__sidenav-content--button"
       mat-fab
       color="light"
-      aria-label="menu button"
+      aria-label="Toggle Button"
     >
       <mat-icon>menu</mat-icon>
     </button>
-    } @else {
-    <button
-      class="container__sidenav-content--button-close"
-      (click)="sidenav.toggle()"
-      aria-label="Toggle icon"
-      mat-raised-button
-    >
-      <mat-icon>arrow_back_ios</mat-icon>
-    </button>
-    }
-
+     
     <vsm-vessels-route-map></vsm-vessels-route-map>
 
     <vsm-bottom-drawer #bottomDrawer>

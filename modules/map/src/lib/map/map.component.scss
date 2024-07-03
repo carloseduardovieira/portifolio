@@ -5,19 +5,7 @@
   &__sidenav-content {
     overflow: hidden;
 
-    &--button-close {
-      top: 2vh;
-      height: 50px;
-      border-top-left-radius: unset;
-      border-bottom-left-radius: unset;
-      min-width: 40px;
-      padding: 0;
-      padding-left: 14px;
-      z-index: 1;
-      position: absolute;
-    }
-
-    &--button-open {
+    &--button {
       left: 5vh;
       position: absolute;
       top: 5vh;
