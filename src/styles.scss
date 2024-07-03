@@ -1,11 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/mapbox-gl/dist/mapbox-gl.css';
+@import './theme/button.scss';
+@import './theme/form.scss';
+@import './theme/fieldset.scss';
+@import './theme/input.scss';
+@import './theme/select.scss';
 
+:root {
+  --color-primary: #004859;
+  --color-accent: #ff8888;
+  --color-accent-secondary: #ffc15a;
+  --color-accent-secondary-darker: #faa415;
+  --color-success: #4caf50;
+  --color-error: #ff5722;
+  --color-info: #449eff;
+  --color-background: #eceff1;
+  --color-text: #263238;
+  --color-text-light: #607d8b;
+  --height-header: 64px;
+  --height-footer: 48px;
+  --border-radius: 10px;
+  --spacing-step: 8px;
+  --font-size-h1: 34px;
+}
+
+body,
 html,
-body {
-  height: 100%;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+span {
+  padding: 0;
+  margin: 0;
 }
 body {
-  margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background-color: var(--color-background);
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }

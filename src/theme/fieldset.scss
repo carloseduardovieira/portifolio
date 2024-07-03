@@ -1,0 +1,11 @@
+fieldset {
+  border: 1px solid var(--color-text-light);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  margin: var(--spacing-step) 0;
+  width: 100%;
+}
+
+legend {
+  font-weight: bold;
+}

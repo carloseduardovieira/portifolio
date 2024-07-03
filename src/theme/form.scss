@@ -1,0 +1,20 @@
+form {
+  background: var(--color-background);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  max-width: 450px;
+  min-width: 395px;
+  padding: calc(var(--spacing-step) * 3);
+  width: 100%;
+}
+
+.ng-valid.ng-dirty:not([formGroupName]):not([formArrayName]):not(
+    [ngModelGroup]
+  ):not(form):not(paper-textarea) {
+  border: 2px solid var(--color-success);
+}
+.ng-invalid.ng-dirty:not([ngModelGroup='address']):not(
+    [formGroupName='address']
+  ):not([formArrayName]):not(form) {
+  border: 2px solid var(--color-error);
+}

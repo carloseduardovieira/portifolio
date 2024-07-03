@@ -1,0 +1,30 @@
+button {
+  background-color: var(--color-accent-secondary);
+  border: var(--color-accent-secondary-darker) 1px solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: calc(var(--spacing-step) * 2);
+  padding: 10px 11px;
+  width: 100%;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    background-color: var(--color-accent-secondary-darker);
+    border: var(--color-accent-secondary) 1px solid;
+  }
+  &.reset-button {
+    background-color: transparent;
+    border: var(--color-primary) 1px solid;
+  }
+}
+
+button[disabled] {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
