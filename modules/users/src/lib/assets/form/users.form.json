@@ -34,6 +34,24 @@
         { "label": "Guest", "value": "guest" }
       ]
     },
+    "bankInformation": {
+      "controlType": "group",
+      "label": "Bank Information",
+      "controls": {
+        "iban": {
+          "controlType": "input",
+          "label": "IBAN",
+          "value": null,
+          "type": "text"
+        },
+        "swiftCode": {
+          "controlType": "input",
+          "label": "Swift Code",
+          "value": null,
+          "type": "text"
+        }
+      }
+    },
     "terms": {
       "controlType": "checkbox",
       "label": "Active",

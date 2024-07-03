@@ -7,9 +7,9 @@
 
     @for (control of formConfig.controls | keyvalue; track control.key){
     <div class="form-field">
-      <ng-container [ngComponentOutlet]="control.value.controlType | dynamicControl"
-        [ngComponentOutletInjector]="control.key | controlInjector: control.value">
-      </ng-container>
+      <ng-container
+      [ngComponentOutlet]="controlResolver.resolve(control.value.controlType)"
+      [ngComponentOutletInjector]="control.key | controlInjector:control.value"></ng-container> 
 
       <div *ngIf="form.get(control.key)?.dirty && form.get(control.key)?.hasError('required')" class="input-error">This
         field is required</div>
