@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -10,7 +11,6 @@ import {
   TemplateRef,
 } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import {
   Subject,
   Subscription,
@@ -20,18 +20,19 @@ import {
   switchMap,
 } from 'rxjs';
 
-import { stringOrNumberValidator } from '../../validators';
-import { VsmListManagement } from './vsm-list-management.interface';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
 } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { stringOrNumberValidator } from '../../validators';
+import { VsmListManagement } from './vsm-list-management.interface';
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'vsm-list',
   templateUrl: './vsm-list.component.html',
   styleUrls: ['./vsm-list.component.scss'],
