@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "storybook": "nx run cvieira-portifolio:storybook"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +23,8 @@
     "@nx/angular": "18.0.0",
     "chart.js": "^4.4.1",
     "mapbox-gl": "^3.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
@@ -41,9 +44,17 @@
     "@nx/eslint-plugin": "18.0.0",
     "@nx/jest": "18.0.0",
     "@nx/js": "18.0.0",
+    "@nx/storybook": "^18.0.0",
     "@nx/web": "18.0.0",
     "@nx/workspace": "18.0.0",
     "@schematics/angular": "~17.1.0",
+    "@storybook/addon-essentials": "7.6.20",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/angular": "7.6.20",
+    "@storybook/core-server": "7.6.20",
+    "@storybook/jest": "^0.2.3",
+    "@storybook/test-runner": "^0.13.0",
+    "@storybook/testing-library": "^0.2.2",
     "@swc-node/register": "~1.6.7",
     "@swc/core": "~1.3.85",
     "@swc/helpers": "~0.5.2",
@@ -62,6 +73,7 @@
     "jsonc-eslint-parser": "^2.1.0",
     "nx": "18.0.0",
     "prettier": "^2.6.2",
+    "storybook": "^7.5.3",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.3.2"
