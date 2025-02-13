@@ -1,0 +1,5 @@
+<div *ngFor="let token of spacingTokens" class="spacing-item">
+    <div class="spacing-box" [style.width]="token.value" [style.backgroundColor]="token.color"></div>
+    <span>{{ token.name }}: {{ token.value }}</span>
+    <button mat-button (click)="copyToClipboard(token.value)">Copy</button>
+</div>

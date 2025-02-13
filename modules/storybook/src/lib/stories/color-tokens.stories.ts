@@ -14,11 +14,11 @@ export default {
   ],
 } as Meta;
 
-const Template: StoryFn<ColorTokensComponent> = (
+const ColorTokensTemplate: StoryFn<ColorTokensComponent> = (
   args: ColorTokensComponent
 ) => ({
   props: args,
 });
 
-export const Default = Template.bind({});
-Default.args = {};
+export const ColorTokensDefault = ColorTokensTemplate.bind({});
+ColorTokensDefault.args = {};
