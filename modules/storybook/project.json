@@ -1,0 +1,9 @@
+{
+  "name": "storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "modules/storybook/src",
+  "prefix": "cvieira",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

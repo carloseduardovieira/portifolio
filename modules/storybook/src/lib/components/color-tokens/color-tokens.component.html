@@ -1,0 +1,5 @@
+<div *ngFor="let token of colorTokens" class="color-item">
+    <div [style.backgroundColor]="token.color" class="color-box"></div>
+    <span>{{ token.name }}: {{ token.color }}</span>
+    <button (click)="copyToClipboard(token.color)">Copy</button>
+</div>

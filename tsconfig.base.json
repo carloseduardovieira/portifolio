@@ -17,6 +17,7 @@
     "paths": {
       "@cvieira/core": ["core/src/index.ts"],
       "@cvieira/map": ["modules/map/src/index.ts"],
+      "@cvieira/storybook": ["modules/storybook/src/index.ts"],
       "@cvieira/users": ["modules/users/src/index.ts"]
     }
   },
