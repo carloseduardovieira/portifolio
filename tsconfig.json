@@ -9,8 +9,12 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
   },
-  "files": [],
-  "include": [],
+  "files": [
+    "./modules/storybook/src/lib/stories/index.ts"
+  ],
+  "include": [
+    
+  ],
   "references": [
     {
       "path": "./tsconfig.app.json"

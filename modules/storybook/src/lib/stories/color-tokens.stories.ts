@@ -8,8 +8,8 @@ export default {
   component: ColorTokensComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ColorTokensComponent],
-      imports: [BrowserAnimationsModule, MatButtonModule],
+      declarations: [],
+      imports: [BrowserAnimationsModule, MatButtonModule, ColorTokensComponent],
     }),
   ],
 } as Meta;
