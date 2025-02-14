@@ -4,13 +4,14 @@
     "emitDecoratorMetadata": true
   },
   "exclude": ["../**/*.spec.ts"],
+  "files": [
+    "./preview.ts"
+  ],
   "include": [
-    "../src/**/*.stories.ts",
-    "../src/**/*.stories.js",
-    "../src/**/*.stories.jsx",
-    "../src/**/*.stories.tsx",
-    "../src/**/*.stories.mdx",
-    "*.js",
-    "*.ts"
+    "../modules/storybook/src/lib/**/*.stories.ts",
+    "../modules/storybook/src/lib/**/*.stories.js",
+    "../modules/storybook/src/lib/**/*.stories.jsx",
+    "../modules/storybook/src/lib/**/*.stories.tsx",
+    "../modules/storybook/src/lib/**/*.stories.mdx",
   ]
 }
