@@ -1,5 +1,8 @@
 import { MatButtonModule } from '@angular/material/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  BrowserAnimationsModule,
+  provideAnimations,
+} from '@angular/platform-browser/animations';
 import { Meta, StoryFn, moduleMetadata } from '@storybook/angular';
 import { SpacingTokensComponent } from '../components';
 
@@ -14,6 +17,7 @@ export default {
         MatButtonModule,
         SpacingTokensComponent,
       ],
+      providers: [provideAnimations()],
     }),
   ],
 } as Meta;
