@@ -92,7 +92,11 @@
         "port": 4400,
         "configDir": "./.storybook",
         "browserTarget": "cvieira-portifolio:build-storybook",
-        "compodoc": false
+        "compodoc": false,
+        "styles": ["src/styles.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["src/styles"]
+        }
       },
       "configurations": {
         "ci": {
@@ -107,7 +111,11 @@
         "outputDir": "dist/storybook/cvieira-portifolio",
         "configDir": "./.storybook",
         "browserTarget": "cvieira-portifolio:build-storybook",
-        "compodoc": false
+        "compodoc": false,
+        "styles": ["src/styles.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["src/styles"]
+        }
       },
       "configurations": {
         "ci": {
