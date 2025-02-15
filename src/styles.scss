@@ -1,10 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
 @import '../node_modules/mapbox-gl/dist/mapbox-gl.css';
 @import './theme/button.scss';
 @import './theme/form.scss';
 @import './theme/fieldset.scss';
 @import './theme/input.scss';
 @import './theme/select.scss';
+
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf')
+    format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf')
+    format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
 
 :root {
   --color-primary: #004859;
@@ -37,7 +54,6 @@ span {
   margin: 0;
 }
 body {
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
   background-color: var(--color-background);
   height: 100%;
 }
@@ -53,3 +69,14 @@ a {
     text-decoration: underline;
   }
 }
+
+$my-theme: mat.define-light-theme(
+  (
+    typography:
+      mat.define-typography-config(
+        $font-family: 'Inter',
+      ),
+    density: 0,
+  )
+);
+@include mat.all-component-themes($my-theme);
