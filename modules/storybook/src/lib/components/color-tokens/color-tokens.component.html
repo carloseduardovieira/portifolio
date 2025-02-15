@@ -1,5 +1,28 @@
-<div *ngFor="let token of colorTokens" class="color-item">
-    <div [style.backgroundColor]="token.color" class="color-box"></div>
-    <span>{{ token.name }}: {{ token.color }}</span>
-    <button (click)="copyToClipboard(token.color)">Copy</button>
+<div class="panel">
+    <h1 class="panel--title">Colors</h1>
+    <div class="panel--table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let token of colorTokens">
+                    <td>
+                        <span>{{ token.name }}</span>
+                    </td>
+                    <td>
+                        <div class="color-container">
+                            <div class="color-preview" [style.backgroundColor]="token.color">
+                                <span class="color-preview--id">{{ token.color }}</span>
+                            </div>
+                            <button mat-button color="warning" (click)="copyToClipboard(token.color)">Copy</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
