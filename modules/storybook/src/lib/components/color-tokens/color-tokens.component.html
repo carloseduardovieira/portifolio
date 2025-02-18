@@ -1,28 +1,22 @@
-<div class="panel">
-    <h1 class="panel--title">Colors</h1>
-    <div class="panel--table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let token of colorTokens">
-                    <td>
-                        <span>{{ token.name }}</span>
-                    </td>
-                    <td>
-                        <div class="color-container">
-                            <div class="color-preview" [style.backgroundColor]="token.color">
-                                <span class="color-preview--id">{{ token.color }}</span>
-                            </div>
-                            <button mat-button color="warning" (click)="copyToClipboard(token.color)">Copy</button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<div class="container">
+    <div class="container--header">
+        <h2>Name</h2>
+        <h2>Swatches</h2>
+    </div>
+    <div class="color-tokens" *ngFor="let group of colorGroups">
+        <div class="color-tokens__sidebar">
+            <h2>{{ group.title }}</h2>
+            <p>{{ group.subtitle }}</p>
+        </div>
+
+        <div class="color-tokens__swimlane">
+            <div class="color-pallete" *ngFor="let color of group.colors">
+                <div (click)="copyToClipboard(color.value)" class="color-pallete--color"
+                    [ngStyle]="{'--before-background': color.value}"></div>
+                <div (click)="copyToClipboard(color.value)" class="color-pallete--legend">
+                    <span>{{color.name}}</span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

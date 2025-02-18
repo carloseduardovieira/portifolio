@@ -10,18 +10,55 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './color-tokens.component.scss',
 })
 export class ColorTokensComponent {
-  colorTokens = [
-    { name: 'Primary', color: '#FF4785' },
-    { name: 'Secondary', color: '#1EA7FD' },
-    { name: 'Tertiary', color: '#DDDDDD' },
-    { name: 'Success', color: '#28a745' },
-    { name: 'Warning', color: '#ffc107' },
-    { name: 'Danger', color: '#dc3545' },
+  colorGroups = [
+    {
+      title: 'theme.color.greyscale',
+      subtitle: 'Some of the greys',
+      colors: [
+        { name: 'White', value: '#FFFFFF' },
+        { name: 'Alabaster', value: '#F8F8F8' },
+        { name: 'Concrete', value: '#F3F3F3' },
+      ],
+    },
+    {
+      title: 'theme.color.primary',
+      subtitle: 'Coral',
+      colors: [{ name: 'WildWatermelon', value: '#FF4785' }],
+    },
+    {
+      title: 'theme.color.secondary',
+      subtitle: 'Ocean',
+      colors: [{ name: 'DodgerBlue', value: '#1EA7FD' }],
+    },
+    {
+      title: 'theme.color.positive',
+      subtitle: 'Green',
+      colors: [
+        { name: 'Apple', value: 'rgba(102,191,60,1)' },
+        { name: 'Apple80', value: 'rgba(102,191,60,.8)' },
+        { name: 'Apple60', value: 'rgba(102,191,60,.6)' },
+        { name: 'Apple30', value: 'rgba(102,191,60,.3)' },
+      ],
+    },
+    {
+      title: 'gradient',
+      subtitle: 'Grayscale',
+      colors: [
+        { name: 'Gradient', value: 'linear-gradient(to right,white,black)' },
+      ],
+    },
+    {
+      title: 'gradient',
+      subtitle: 'Grayscale',
+      colors: [
+        { name: 'Gradient', value: 'linear-gradient(65deg,white,black)' },
+      ],
+    },
   ];
 
   copyToClipboard(color: string) {
     navigator.clipboard.writeText(color).then(() => {
-      alert(`Copied ${color} to clipboard!`);
+      alert(`Copied: ${color}`);
     });
   }
 }
