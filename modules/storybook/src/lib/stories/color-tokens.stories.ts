@@ -4,8 +4,21 @@ import { Meta, StoryFn, moduleMetadata } from '@storybook/angular';
 import { ColorTokensComponent } from '../components';
 
 export default {
-  title: 'Color Tokens',
+  title: 'DESIGN TOKEN / Color Tokens',
   component: ColorTokensComponent,
+  parameters: {
+    options: {
+      showPanel: false, // Hide the addon panel for this specific story
+      isToolshown: false, // Hide toolbars for this specific story
+    },
+    sidebar: {
+      showRoots: false,
+    },
+    layout: 'centered', // Optional: Center the story layout
+    previewTabs: {
+      'storybook/docs/panel': { hidden: true }, // Hide docs preview tab
+    },
+  },
   decorators: [
     moduleMetadata({
       declarations: [],
@@ -21,4 +34,3 @@ const ColorTokensTemplate: StoryFn<ColorTokensComponent> = (
 });
 
 export const ColorTokensDefault = ColorTokensTemplate.bind({});
-ColorTokensDefault.args = {};
