@@ -4,7 +4,7 @@ import { Meta, StoryFn, moduleMetadata } from '@storybook/angular';
 import { ColorTokensComponent } from '../components';
 
 export default {
-  title: 'DESIGN TOKEN / Color Tokens',
+  title: 'DESIGN SYSTEM / Color Tokens',
   component: ColorTokensComponent,
   parameters: {
     options: {
