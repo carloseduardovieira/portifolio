@@ -50,9 +50,7 @@ export class ColorTokensComponent {
     {
       title: 'gradient',
       subtitle: 'Grayscale',
-      colors: [
-        { name: 'Gradient', value: 'linear-gradient(65deg,white,black)' },
-      ],
+      colors: [{ name: 'Gradient', value: 'linear-gradient(65deg,white,red)' }],
     },
   ];
 
